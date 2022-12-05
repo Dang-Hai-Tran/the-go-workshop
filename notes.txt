@@ -1,0 +1,12 @@
+ch05
+When the first letter of the function name is in lowercase, then the function is not exportable outside of a package. This means they are private and cannot be called from outside the package. They can only be called within the package.Keep this in mind when you use camelCase naming convention. If you want your function to be exportable, the first letter of the function name must be capitalized.
+Function signature: Though not listed in the preceding code snippet, a function signature is a term that references the input parameters combined with the return types. Both of those units make up a function signature.Often, when you define the function signature when it is being used by others, you want to strive to not make changes to it as this can adversely impact your code and the code of others.
+A variadic function is a function that accepts a variable number of argument values. It is good to use a variadic function when the number of arguments of a specified type is unknown.
+func f(parameterName …Type)
+The preceding function is an example of what a variadic function looks like. The three dots (…) in front of the type is called a pack operator. The pack operator is what makes it a variadic function. It tells Go to store all the arguments of Type into parameterName. The variadic variable can accept zero or more variables as the argument.
+Variadic functions can have other parameters. However, if your function requires multiple parameters, the variadic parameter must be the last parameter in the function. Also, there can only be one variadic variable per function.
+The defer statement defers the execution of a function until the surrounding function returns.
+
+ch06
+It is Go idiomatic to evaluate the error value for functions or methods that return an error. It is generally bad practice to not handle an error that is returned from the function. An error when returned and ignored can lead to lots of wasted debugging efforts. It can also cause unforeseen consequences in your program. If the value is not nil, then we have an error and must decide how we want to handle it.
+Go provides us with the ability to regain control after panic has occurred. Recover is a function that is used to regain control of a panicking Goroutine.
