@@ -10,3 +10,7 @@ The defer statement defers the execution of a function until the surrounding fun
 ch06
 It is Go idiomatic to evaluate the error value for functions or methods that return an error. It is generally bad practice to not handle an error that is returned from the function. An error when returned and ignored can lead to lots of wasted debugging efforts. It can also cause unforeseen consequences in your program. If the value is not nil, then we have an error and must decide how we want to handle it.
 Go provides us with the ability to regain control after panic has occurred. Recover is a function that is used to regain control of a panicking Goroutine.
+The recover() function is only useful inside a deferred function. As you may recall, a deferred function gets executed before the encompassing function terminates. Executing a call to the recover() function inside a deferred function stops the panicking by restoring normal execution. If the recover() function is called outside a deferred function, it will not stop the panicking.
+
+ch07
+Interfaces in other programming languages implement an interface explicitly. Explicit implementation means that the programming language directly and clearly states that this object is using this interface.In Go, interfaces are implemented implicitly. This means that a type will implement the interface by having all the methods and their signature of the interface.
