@@ -3,7 +3,7 @@ import (
 	"fmt"
 )
 
-func printNums(nums...int)  {
+func printNums(nums... int)  {
 	for _, num := range nums {
 		fmt.Println(num)
 	}

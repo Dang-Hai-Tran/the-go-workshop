@@ -14,3 +14,10 @@ The recover() function is only useful inside a deferred function. As you may rec
 
 ch07
 Interfaces in other programming languages implement an interface explicitly. Explicit implementation means that the programming language directly and clearly states that this object is using this interface.In Go, interfaces are implemented implicitly. This means that a type will implement the interface by having all the methods and their signature of the interface.
+We learned that Go's implementation of interfaces has some similarities with other languages; for example, an interface does not contain the implementation details of the behaviors it is representing, and an interface is the blueprint of the methods.
+
+ch08
+Go organizes its code for reusability into directories called packages. A package is essentially a directory inside your workspace that contains one or more Go source files, which is used for grouping code that performs a task. It exposes only the necessary parts in order for those using your package to get a job done. The package concept is akin to using directories to organize files on a computer.
+It does not matter to Go how many different files are in a package. You should separate code into as many files as makes sense for readability and logic grouping. However, all the files that are in a package must live in the same directory.
+Internally, all code is accessible across the files. Simply stated, code is visible within the package. Notice that not all of the code is visible outside of the package.
+If a function, type, variable, and so on starts with an uppercase letter, it is exportable; if it starts with a lowercase letter, it is unexportable.
