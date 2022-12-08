@@ -20,4 +20,23 @@ ch08
 Go organizes its code for reusability into directories called packages. A package is essentially a directory inside your workspace that contains one or more Go source files, which is used for grouping code that performs a task. It exposes only the necessary parts in order for those using your package to get a job done. The package concept is akin to using directories to organize files on a computer.
 It does not matter to Go how many different files are in a package. You should separate code into as many files as makes sense for readability and logic grouping. However, all the files that are in a package must live in the same directory.
 Internally, all code is accessible across the files. Simply stated, code is visible within the package. Notice that not all of the code is visible outside of the package.
-If a function, type, variable, and so on starts with an uppercase letter, it is exportable; if it starts with a lowercase letter, it is unexportable.
+If a function, type, variable, and so on starts with an uppercase letter, it is exportable; if it starts with a lowercase letter, it is nonexportable.
+The init() function adds initialization logic for your package. Here are some examples of uses of the init() function:
+* Setting database objects and connections
+* The initialization of package variables
+* Creating files
+* Loading configuration data
+* Verifying or repairing the program state
+
+ch12
+To define your flag, you must know the flag type you will be accepting. The flag package provides many functions for defining flags.
+We then call the flag.Parse() function to place the arguments for those flags into their respective reference variables.
+What is a signal? In our context, a signal is an interrupt that is sent to our program or to a process by the OS. When a signal is delivered to our program, the program will stop what it is doing; either it will handle the signal or, if possible, ignore it.
+We use defer statements in our applications to perform various cleanup activities, such as the following:
+* The release of resources
+* The closing of files
+* The closing of database connections
+* Performing the removal of configuration or temporary files
+There are certain scenarios in which the defer function won't execute; for example, an OS interrupt to your program:
+* os.Exit(1)
+* Ctrl + C

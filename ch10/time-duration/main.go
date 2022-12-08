@@ -19,5 +19,7 @@ func main() {
 	}
 	fmt.Println(string(stdout))
 	elapsed := end.Sub(start).Seconds()
+	fmt.Println("The program start at:", start)
+	fmt.Println("The program end at:", end)
 	fmt.Printf("Execution time = %f(s)\n", elapsed)
 }
