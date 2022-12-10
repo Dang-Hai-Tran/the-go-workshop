@@ -1,0 +1,2 @@
+Notes:
+1. Learn coding by Golang
